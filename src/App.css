@@ -1,0 +1,138 @@
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  margin: 0;
+  background-color: black;
+  background-image: url(./assets/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: Monserrat, sans-serif;
+}
+
+.navlogo {
+  max-width: 6%;
+  max-height: 8%;
+  margin: 0;
+  padding: 0;
+}
+
+.MuiButton-textSizeLarge {
+  font-size: 1.5rem !important;
+}
+
+/* home page elements */
+.banner img {
+  max-width: 100%;
+}
+.section {
+  width: 80%;
+  margin: 3rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  background: rgba(232, 244, 255, 0.26);
+}
+.container-media {
+  padding: 1.75rem;
+}
+.container-media img {
+  width: 100%;
+  height: 100%;
+}
+.container-txt {
+  font-size: 2.5rem;
+  line-height: normal;
+  padding: 0 0 0 1rem;
+}
+
+.container-txt h1 {
+  line-height: 4.5rem;
+}
+
+#section-3 {
+  width: 65%;
+  margin: auto;
+  padding-top: 2rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#section-3 p {
+  padding: 3rem 0 2rem 0;
+  width: 60%;
+  margin: auto;
+}
+
+#section-3 h1 {
+  line-height: 7rem;
+  width: 100%;
+}
+
+.btn {
+  font-size: 4rem;
+  border-radius: 16px;
+  background: rgba(80, 87, 97, 0.623);
+  border: none;
+  padding: 1.5rem;
+  color: rgba(248, 242, 242, 0.85);
+  cursor: pointer;
+}
+.btn:hover {
+  color: rgba(17, 17, 17, 0.705);
+  background: rgba(175, 175, 175, 0.609);
+}
+a {
+  text-decoration: none;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* sign up */
+#logo {
+  height: 300px;
+  width: 300px;
+}
+
+form {
+  border: rgba(163, 235, 235, 0.52) solid 2px;
+  border-radius: 25px;
+  padding: 2.5rem;
+  padding-bottom: 3rem;
+  width: 25%;
+}
+
+#form {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.credentials {
+  /* border: hotpink solid 2px; */
+  margin-top: 0;
+  margin-bottom: 2rem;
+  height: 3vh;
+  width: 100%;
+  font-size: 30px;
+  background-color: rgba(167, 167, 167, 0.452);
+}
+
+input {
+  margin-top: 2rem;
+  width: 100%;
+  font-size: 30px;
+  border-radius: 8px;
+  background-color: rgba(9, 13, 223, 0.226);
+  color: white;
+  border-style: solid;
+  border: grey;
+}
