@@ -1,4 +1,4 @@
-import Link from "react-router-dom/Link";
+import { Link } from "react-router-dom";
 
 //MUI imports
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -11,15 +11,15 @@ const styles = () => ({
       color: "white",
     },
     margin: "0 .5rem 0 .5rem",
+    fontFamily: "Monserrat, sans-serif",
+    fontWeight: "525",
   },
-  color: "#2e343acc",
 });
 
 const MyButton = ({ children, classes, page }) => {
   return (
     <Button
       variant='contained'
-      color='inherited'
       size='large'
       className={classes.default}
       component={Link}

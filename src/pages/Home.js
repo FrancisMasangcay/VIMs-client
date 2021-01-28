@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-//components
-import NavbarHome from "../components/NavbarHome";
+//MUI
+// import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
+// import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 
 //assets
 import banner from "../assets/VIM-homepage-banner.png";
@@ -15,41 +16,40 @@ export default function Home() {
   }, []);
   return (
     <>
-      <NavbarHome />
-      <div class='banner'>
+      <div className='banner'>
         <img src={banner} alt='banner' />
       </div>
-      <div class='section' /*data-aos='fade-down' data-aos-delay='500'*/>
-        <div class='container-txt'>
+      <div className='section' /*data-aos='fade-down' data-aos-delay='500'*/>
+        <div className='container-txt'>
           <h1>Explore the world of Investments</h1>
           <p>
             Simulate a real life investment portfolio by making trades on the
-            VIMS market tracking Wall Street in real time.
+            VIMS virtual market that tracks Wall Street.
           </p>
         </div>
-        <div class='container-media'>
+        <div className='container-media'>
           <img src={placeholder} alt='simulation' />
         </div>
       </div>
 
-      <div class='section' data-aos='fade-right'>
-        <div class='container-media'>
+      <div className='section' data-aos='fade-right'>
+        <div className='container-media'>
           <iframe
             src='https://www.youtube.com/embed/NpEaa2P7qZI'
-            frameborder='0'
+            frameBorder='0'
             title='Intro'
           ></iframe>
         </div>
-        <div class='container-txt'>
+        <div className='container-txt'>
           <h1>Learn the Basics</h1>
           <p>
             For newer traders, VIMS comes with easy to navigate introductory
-            videos that explain basic investment concepts and terms.
+            tutorials that explain basic investment concepts and terms.
           </p>
         </div>
       </div>
-      <div class='section' data-aos='fade-left'>
-        <div class='container-txt'>
+      <div className='section' data-aos='fade-left'>
+        <div className='container-txt'>
           <h1>Research</h1>
           <p>
             Find opportunities with VIMS easy to use built in stock filters. And
@@ -57,14 +57,14 @@ export default function Home() {
             data, and fund prospectuses.{" "}
           </p>
         </div>
-        <div class='container-media'>
+        <div className='container-media'>
           <img src={placeholder} alt='stock filters' />
         </div>
       </div>
 
       <div id='section-3'>
         <h1>READY TO GET STARTED? LET'S DIVE INTO INVESTING</h1>
-        <a href='/signup' class='btn'>
+        <a href='/signup' className='btn'>
           SIGN UP
         </a>
         <p>
