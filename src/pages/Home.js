@@ -3,8 +3,6 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 //MUI
-// import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
-// import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 
 //assets
 import banner from "../assets/VIM-homepage-banner.png";
@@ -19,7 +17,7 @@ export default function Home() {
       <div className='banner'>
         <img src={banner} alt='banner' />
       </div>
-      <div className='section' /*data-aos='fade-down' data-aos-delay='500'*/>
+      <div className='section'>
         <div className='container-txt'>
           <h1>Explore the world of Investments</h1>
           <p>

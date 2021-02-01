@@ -32,15 +32,6 @@ class login extends Component {
       errors: {},
     };
   }
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.errors) {
-  //     this.setState({
-  //       errors: nextProps.UI.errors,
-  //     });
-  //   } else {
-  //     console.log(nextProps);
-  //   }
-  // }
   componentDidUpdate() {
     console.log("didUpdate props, ", this.props);
     if (this.props.UI.errors && this.state.errors !== this.props.UI.errors) {
@@ -53,6 +44,7 @@ class login extends Component {
       email: this.state.email,
       password: this.state.password,
     };
+    console.log("login history prop ", this.props.history);
     this.props.loginUser(userData, this.props.history);
   };
   handleChange = (event) => {
@@ -94,7 +86,7 @@ class login extends Component {
                   value={this.state.email}
                   onChange={this.handleChange}
                   fullwidth='true'
-                  inputProps={{ className: classes.input }}
+                  inputProps={{ className: classes.inputForm }}
                 ></TextField>
                 <TextField
                   id='password'
@@ -106,7 +98,7 @@ class login extends Component {
                   error={errors.password ? true : false}
                   className={classes.textField}
                   value={this.state.password}
-                  inputProps={{ className: classes.input }}
+                  inputProps={{ className: classes.inputForm }}
                   onChange={this.handleChange}
                   variant='outlined'
                   fullwidth='true'

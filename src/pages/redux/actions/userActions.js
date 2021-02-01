@@ -4,7 +4,9 @@ import {
   CLEAR_ERRORS,
   LOADING_UI,
   SET_UNAUTHENTICATED,
+  SET_AUTHENTICATED,
 } from "../types";
+
 import axios from "axios";
 
 export const loginUser = (userData, history) => (dispatch) => {
@@ -12,16 +14,20 @@ export const loginUser = (userData, history) => (dispatch) => {
   axios
     .post("/login", userData)
     .then((res) => {
-      console.log("Login route response data ", res.data);
       const FBIdToken = `Bearer ${res.data.token}`;
       localStorage.setItem("FBIdToken", FBIdToken);
       axios.defaults.headers.common["Authorization"] = FBIdToken;
+      dispatch({ type: SET_AUTHENTICATED });
       dispatch(getUserData());
       dispatch({ type: CLEAR_ERRORS });
-      history.push("/");
+      console.log("Login USERACTION history prop ", history);
+      history.push("/profile");
     })
     .catch((err) => {
-      dispatch({ type: SET_ERRORS, payload: err.response.data });
+      let error;
+      if (err.response && err.response.data) error = err.response.data;
+      else error = err;
+      dispatch({ type: SET_ERRORS, payload: error });
     });
 };
 export const signupUser = (newUserData, history) => (dispatch) => {
@@ -37,21 +43,25 @@ export const signupUser = (newUserData, history) => (dispatch) => {
       history.push("/");
     })
     .catch((err) => {
-      dispatch({ type: SET_ERRORS, payload: err.response.data });
+      let error;
+      if (err.response && err.response.data) error = err.response.data;
+      else error = err;
+      dispatch({ type: SET_ERRORS, payload: error });
     });
 };
 
-export const logoutUser = () => (dispatch) => {
+export const logoutUser = (history) => (dispatch) => {
   localStorage.removeItem("FBIdToken");
   delete axios.defaults.headers.common["Authorization"];
   dispatch({ type: SET_UNAUTHENTICATED });
+  history.push("/");
 };
 
 export const getUserData = () => (dispatch) => {
+  dispatch({ type: LOADING_UI });
   axios
     .get("/user")
     .then((res) => {
-      console.log("res.data, ", res.data);
       dispatch({
         type: SET_USER,
         payload: res.data,

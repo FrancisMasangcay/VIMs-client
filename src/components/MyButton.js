@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import clsx from "clsx";
 
 //MUI imports
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -16,14 +17,15 @@ const styles = () => ({
   },
 });
 
-const MyButton = ({ children, classes, page }) => {
+const MyButton = ({ children, classes, page, customClass, onClickEvent }) => {
   return (
     <Button
       variant='contained'
       size='large'
-      className={classes.default}
+      className={clsx(classes.default, customClass)}
       component={Link}
       to={page}
+      onClick={onClickEvent}
     >
       {children}
     </Button>

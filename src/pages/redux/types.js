@@ -8,3 +8,5 @@ export const SET_ERRORS = "SET_ERRORS";
 export const LOADING_UI = "LOADING_UI";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 //data reducer types
+export const GET_QUOTE = "GET_QUOTE";
+export const PLACE_ORDER = "PLACE_ORDER";

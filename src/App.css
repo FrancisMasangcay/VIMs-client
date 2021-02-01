@@ -108,33 +108,6 @@ iframe {
   width: 300px;
 }
 
-/* form {
-  border: rgba(163, 235, 235, 0.52) solid 2px;
-  border-radius: 25px;
-  padding: 2.5rem;
-  padding-bottom: 3rem;
-  width: 25%;
-} */
-
-/* #form {
-  width: 100%;
-  height: 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} */
-/*
-.credentials {
-  border: hotpink solid 2px;
-  margin-top: 0;
-  margin-bottom: 2rem;
-  height: 3vh;
-  width: 100%;
-  font-size: 30px;
-  background-color: rgba(167, 167, 167, 0.452);
-} */
-
 input {
   margin-top: 2rem;
   width: 100%;
@@ -173,4 +146,15 @@ input {
   font-weight: bold;
   color: rgba(0, 0, 0, 0.746);
   /* border: lightcyan solid 2px; */
+}
+
+.performanceChart {
+  margin: 3vh auto 5vh auto;
+  width: 90vw;
+  height: 40vh;
+}
+
+.allocationChart {
+  margin: 0vh auto 5vh auto;
+  width: 90%;
 }

@@ -34,12 +34,6 @@ class signup extends Component {
       errors: {},
     };
   }
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.errors)
-  //     this.setState({
-  //       errors: nextProps.UI.errors,
-  //     });
-  // }
   componentDidUpdate() {
     console.log("didUpdate props, ", this.props);
     if (this.props.UI.errors && this.state.errors !== this.props.UI.errors) {
@@ -68,7 +62,7 @@ class signup extends Component {
   render() {
     const {
       classes,
-      UI: { loading /*, errors */ },
+      UI: { loading },
     } = this.props;
 
     const { errors } = this.state;
@@ -100,7 +94,7 @@ class signup extends Component {
                   value={this.state.email}
                   onChange={this.handleChange}
                   fullwidth='true'
-                  inputProps={{ className: classes.input }}
+                  inputProps={{ className: classes.inputForm }}
                 ></TextField>
                 <TextField
                   id='first'
@@ -115,7 +109,7 @@ class signup extends Component {
                   value={this.state.first}
                   onChange={this.handleChange}
                   fullwidth='true'
-                  inputProps={{ className: classes.input }}
+                  inputProps={{ className: classes.inputForm }}
                 ></TextField>
                 <TextField
                   id='last'
@@ -130,7 +124,7 @@ class signup extends Component {
                   value={this.state.last}
                   onChange={this.handleChange}
                   fullwidth='true'
-                  inputProps={{ className: classes.input }}
+                  inputProps={{ className: classes.inputForm }}
                 ></TextField>
                 <TextField
                   id='username'
@@ -145,7 +139,7 @@ class signup extends Component {
                   value={this.state.username}
                   onChange={this.handleChange}
                   fullwidth='true'
-                  inputProps={{ className: classes.input }}
+                  inputProps={{ className: classes.inputForm }}
                 ></TextField>
                 <TextField
                   id='password'
@@ -157,7 +151,7 @@ class signup extends Component {
                   error={errors.password ? true : false}
                   className={classes.textField}
                   value={this.state.password}
-                  inputProps={{ className: classes.input }}
+                  inputProps={{ className: classes.inputForm }}
                   onChange={this.handleChange}
                   variant='outlined'
                   fullwidth='true'
@@ -175,7 +169,7 @@ class signup extends Component {
                   value={this.state.confirmPass}
                   onChange={this.handleChange}
                   fullwidth='true'
-                  inputProps={{ className: classes.input }}
+                  inputProps={{ className: classes.inputForm }}
                 ></TextField>
                 {errors.general && (
                   <Typography variant='body2' className={classes.customError}>

@@ -1,4 +1,4 @@
-export default {
+export const themeFile = {
   palette: {
     primary: {
       main: "#3b4249cc",
@@ -9,6 +9,7 @@ export default {
   },
   spread: {
     root: {
+      width: "100%",
       flexGrow: 1,
     },
     right: {
@@ -32,7 +33,7 @@ export default {
         color: "orange",
       },
     },
-    input: {
+    inputForm: {
       "&:-webkit-autofill": {
         WebkitBoxShadow: "0 0 0 1000px #BACFE2 inset",
       },
@@ -63,6 +64,11 @@ export default {
     link: {
       color: "black",
       textDecoration: "underline",
+    },
+    searchField: {
+      marginRight: "1rem",
+      marginLeft: "1rem",
+      alignSelf: "center",
     },
   },
 };

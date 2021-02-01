@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-class Reset extends Component {
+class Settings extends Component {
   render() {
     return <div></div>;
   }
 }
 
-export default Reset;
+export default Settings;
