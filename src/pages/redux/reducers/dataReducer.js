@@ -2,7 +2,7 @@ import { GET_QUOTE, PLACE_ORDER } from "../types";
 
 const initialState = {
   currQuote: {},
-  order: {},
+  orderResponse: {},
 };
 
 export default function (state = initialState, action) {
@@ -15,7 +15,7 @@ export default function (state = initialState, action) {
     case PLACE_ORDER:
       return {
         ...state,
-        order: action.payload,
+        orderResponse: action.payload,
       };
     default:
       return state;

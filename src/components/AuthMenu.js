@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { logoutUser } from "../pages/redux/actions/userActions";
-import { useHistory } from "react-router";
 
 //MUI
 import Button from "@material-ui/core/Button";
@@ -40,11 +39,11 @@ const AuthMenu = (props) => {
   const handleLogOut = () => {
     console.log("In handle logout");
     console.log("props ", props);
-    props.logoutUser(history);
+    props.logoutUser();
+    window.location.href = "/login";
   };
 
   const { classes } = props;
-  const history = useHistory();
   return (
     <div>
       <Button
@@ -71,18 +70,13 @@ const AuthMenu = (props) => {
           </MyButton>
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <MyButton page='/definitions' customClass={classes.root}>
+          <MyButton page='/terms' customClass={classes.root}>
             Definitions
           </MyButton>
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <MyButton page='/learn' customClass={classes.root}>
             Learn
-          </MyButton>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <MyButton page='/settings' customClass={classes.root}>
-            Settings
           </MyButton>
         </MenuItem>
       </Menu>

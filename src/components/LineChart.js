@@ -20,7 +20,15 @@ class LineChart extends Component {
     }
   }
 
+  componentDidMount() {
+    this.getData();
+  }
+
   getData = () => {
+    if (!this.props.user.performance) {
+      console.log("performacne PROP IS UNDFINED - in lineChart");
+      return;
+    }
     const userRef = this.props.user;
     const pLabels = [];
     const pData = [];
@@ -81,6 +89,13 @@ class LineChart extends Component {
                 },
               ],
             },
+            animation: {
+              duration: 0, // general animation time
+            },
+            hover: {
+              animationDuration: 0, // duration of animations when hovering an item
+            },
+            responsiveAnimation: 0,
           }}
         />
       </div>

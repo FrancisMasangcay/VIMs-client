@@ -95,6 +95,12 @@ body {
 }
 a {
   text-decoration: none;
+  color: black;
+  font-size: large;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 iframe {
@@ -157,4 +163,68 @@ input {
 .allocationChart {
   margin: 0vh auto 5vh auto;
   width: 90%;
+}
+
+.pageLink {
+  width: 5%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+}
+
+.pageLink a:hover {
+  background-color: #fff;
+}
+
+.pageLinkContainer {
+  width: 98%;
+  margin: 3vh auto 3vh auto;
+  border-radius: 5px;
+}
+
+.pageLink a {
+  background-color: #c5c5c7d5;
+  color: black;
+  height: 100%;
+  text-align: center;
+  line-height: 5vh;
+  text-decoration: none;
+  width: 100%;
+}
+
+.definition-section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 3vh auto 3vh auto;
+  padding: 3vh;
+  width: 90%;
+  border: 2px solid black;
+}
+
+.definition-section h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.definition-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.definition-links li {
+  margin-right: 2vw;
+}
+
+.definition-links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.definition-link {
+  border-radius: 5px;
+  background-color: #c9d5ec;
+  color: #fff;
+  width: 55%;
 }

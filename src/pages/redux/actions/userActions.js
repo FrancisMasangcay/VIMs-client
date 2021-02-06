@@ -19,8 +19,6 @@ export const loginUser = (userData, history) => (dispatch) => {
       axios.defaults.headers.common["Authorization"] = FBIdToken;
       dispatch({ type: SET_AUTHENTICATED });
       dispatch(getUserData());
-      dispatch({ type: CLEAR_ERRORS });
-      console.log("Login USERACTION history prop ", history);
       history.push("/profile");
     })
     .catch((err) => {
@@ -39,8 +37,7 @@ export const signupUser = (newUserData, history) => (dispatch) => {
       localStorage.setItem("FBIdToken", FBIdToken);
       axios.defaults.headers.common["Authorization"] = FBIdToken;
       dispatch(getUserData());
-      dispatch({ type: CLEAR_ERRORS });
-      history.push("/");
+      history.push("/profile");
     })
     .catch((err) => {
       let error;
@@ -50,11 +47,10 @@ export const signupUser = (newUserData, history) => (dispatch) => {
     });
 };
 
-export const logoutUser = (history) => (dispatch) => {
+export const logoutUser = () => (dispatch) => {
   localStorage.removeItem("FBIdToken");
   delete axios.defaults.headers.common["Authorization"];
   dispatch({ type: SET_UNAUTHENTICATED });
-  history.push("/");
 };
 
 export const getUserData = () => (dispatch) => {
@@ -66,6 +62,7 @@ export const getUserData = () => (dispatch) => {
         type: SET_USER,
         payload: res.data,
       });
+      dispatch({ type: CLEAR_ERRORS });
     })
     .catch((err) => console.log(err));
 };

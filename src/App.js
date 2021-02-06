@@ -18,6 +18,7 @@ import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import NavbarHome from "./components/NavbarHome";
 import AuthRoute from "./components/AuthRoute";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Term from "./components/Term";
 
 //pages
 import home from "./pages/Home";
@@ -25,9 +26,9 @@ import login from "./pages/login";
 import signup from "./pages/signup";
 import order from "./pages/order";
 import profile from "./pages/profile";
-import Reset from "./pages/Reset";
 import Learn from "./pages/Learn";
-import Settings from "./pages/Settings";
+import Dictionary from "./pages/Dictionary";
+import OrderStatus from "./pages/OrderStatus";
 
 const theme = createMuiTheme(themeFile);
 const token = localStorage.FBIdToken;
@@ -58,9 +59,14 @@ class App extends Component {
               <AuthRoute exact path='/signup' component={signup} />
               <ProtectedRoute exact path='/order' component={order} />
               <ProtectedRoute exact path='/profile' component={profile} />
-              <ProtectedRoute exact path='/reset' component={Reset} />
-              <ProtectedRoute exact path='/settings' component={Settings} />
               <ProtectedRoute exact path='/learn' component={Learn} />
+              <ProtectedRoute exact path='/dictionary' component={Dictionary} />
+              <ProtectedRoute
+                exact
+                path='/order-status'
+                component={OrderStatus}
+              />
+              <Route exact path='/dictionary/:term' component={Term} />
             </Switch>
           </Router>
         </Provider>

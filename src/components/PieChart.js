@@ -19,7 +19,18 @@ class PieChart extends Component {
     }
   }
 
+  componentDidMount() {
+    this.getData();
+  }
+
   getData = () => {
+    if (
+      !this.props.user.credentials ||
+      !this.props.user.credentials.allocation
+    ) {
+      console.log("credentials or alloc PROP IS UNDFINED - in pieChart");
+      return;
+    }
     const alloc = this.props.user.credentials.allocation;
     if (alloc.liquid == undefined) alloc.liquid = 0;
     if (alloc.stock == undefined) alloc.stock = 0;
@@ -50,7 +61,6 @@ class PieChart extends Component {
   };
 
   render() {
-    // const { allocation } = this.props;
     return (
       <div className='allocationChart'>
         <Pie
@@ -69,6 +79,13 @@ class PieChart extends Component {
               fontSize: 25,
               fontColor: "rgba(255, 255, 255, .85)",
             },
+            animation: {
+              duration: 0, // general animation time
+            },
+            hover: {
+              animationDuration: 0, // duration of animations when hovering an item
+            },
+            responsiveAnimationDuration: 0, // animation duration after a resize
           }}
         />
       </div>

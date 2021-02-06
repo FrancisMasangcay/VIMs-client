@@ -5,6 +5,9 @@ import moment from "moment";
 //MUI
 import Grid from "@material-ui/core/Grid";
 import withStyles from "@material-ui/core/styles/withStyles";
+import Typography from "@material-ui/core/Typography";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
 
 //components
 import LineChart from "../components/LineChart";
@@ -51,12 +54,13 @@ const p_columns = [
 ];
 
 class profile extends Component {
-  // componentDidMount() {
-  //   this.props.getUserData()
-  // }
-
   render() {
-    const { classes, transactions, positions } = this.props;
+    const {
+      classes,
+      transactions,
+      positions,
+      credentials: { cash },
+    } = this.props;
     const transactionData = [];
     for (let i = 0; i < transactions.length; i++) {
       let data = {};
@@ -73,7 +77,23 @@ class profile extends Component {
       <>
         <LineChart />
         <div className={classes.grid}>
-          <Grid container spacing={1}>
+          <Grid container spacing={5}>
+            <Grid item sm={12}>
+              <Card className={classes.root}>
+                <CardContent>
+                  <Typography
+                    className={classes.title}
+                    color='textSecondary'
+                    gutterBottom
+                  >
+                    Cash & Cash Investments
+                  </Typography>
+                  <Typography variant='h5' component='h2'>
+                    ${cash}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
             <Grid item sm={6}>
               <PieChart />
             </Grid>
@@ -101,6 +121,7 @@ class profile extends Component {
 const mapStateToProps = (state) => ({
   transactions: state.user.transactions,
   positions: state.user.holdings,
+  credentials: state.user.credentials,
 });
 
 export default connect(mapStateToProps)(withStyles(styles)(profile));

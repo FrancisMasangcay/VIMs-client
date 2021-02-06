@@ -10,9 +10,9 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import withStyles from "@material-ui/core/styles/withStyles";
-import SearchIcon from "@material-ui/icons/Search";
-import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import SearchIcon from "@material-ui/icons/Search";
 import { fade } from "@material-ui/core/styles";
 
 //components
