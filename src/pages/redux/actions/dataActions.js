@@ -4,7 +4,6 @@ import {
   LOADING_UI,
   GET_QUOTE,
   PLACE_ORDER,
-  SET_USER,
 } from "../types";
 
 import axios from "axios";

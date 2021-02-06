@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import logo from "../assets/Vims-logo6.png";
 import orderPlaced from "../assets/orderPlaced.jpg";
 
 //MUI

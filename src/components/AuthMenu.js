@@ -70,7 +70,7 @@ const AuthMenu = (props) => {
           </MyButton>
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <MyButton page='/terms' customClass={classes.root}>
+          <MyButton page='/dictionary' customClass={classes.root}>
             Definitions
           </MyButton>
         </MenuItem>

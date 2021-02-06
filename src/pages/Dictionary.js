@@ -24,25 +24,23 @@ class Dictionary extends Component {
         </Toolbar>
         <div>
           {definitions.map((category) => {
-            //category is an obj
             let header = Object.keys(category)[0];
-            if (header.length > 1) header = "#";
+
             return (
               <div id={header} className='definition-section'>
                 <Grid container className='definition-links' spacing={3}>
                   <Grid item sm={12}>
-                    <h2>{header[0][0]}</h2>
+                    <h2>{header}</h2>
                   </Grid>
                   {Object.entries(category).map((terms) => {
-                    //terms is an array w 0 index being the key and 1 index being the array of terms/definition objects
-                    // console.log("terms = ", terms);
-                    // console.log("Type of terms = ", typeof terms);
                     let termsArr = terms[1];
                     return termsArr.map((item) => {
                       let theTerm = item.term;
                       return (
                         <Grid item sm={4}>
-                          <Link to={`${this.props.match.url}/${theTerm}`}>
+                          <Link
+                            to={`${this.props.match.url}/${header}/${theTerm}`}
+                          >
                             {theTerm}
                           </Link>
                         </Grid>

@@ -15,7 +15,7 @@ class LineChart extends Component {
   }
 
   componentDidUpdate() {
-    if (this.state.chartData.labels.length == 0) {
+    if (this.state.chartData.labels.length === 0) {
       this.getData();
     }
   }

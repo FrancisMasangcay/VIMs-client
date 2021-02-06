@@ -14,7 +14,7 @@ class PieChart extends Component {
   }
 
   componentDidUpdate() {
-    if (this.state.chartData.labels.length == 0) {
+    if (this.state.chartData.labels.length === 0) {
       this.getData();
     }
   }
@@ -32,9 +32,9 @@ class PieChart extends Component {
       return;
     }
     const alloc = this.props.user.credentials.allocation;
-    if (alloc.liquid == undefined) alloc.liquid = 0;
-    if (alloc.stock == undefined) alloc.stock = 0;
-    if (alloc.mutualFunds == undefined) alloc.mutualFunds = 0;
+    if (alloc.liquid === undefined) alloc.liquid = 0;
+    if (alloc.stock === undefined) alloc.stock = 0;
+    if (alloc.mutualFunds === undefined) alloc.mutualFunds = 0;
 
     const theData = [alloc.liquid, alloc.stock, alloc.mutualFunds];
 

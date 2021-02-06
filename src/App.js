@@ -66,7 +66,7 @@ class App extends Component {
                 path='/order-status'
                 component={OrderStatus}
               />
-              <Route exact path='/dictionary/:term' component={Term} />
+              <Route exact path='/dictionary/:letter/:term' component={Term} />
             </Switch>
           </Router>
         </Provider>
