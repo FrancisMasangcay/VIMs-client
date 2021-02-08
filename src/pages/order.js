@@ -11,11 +11,13 @@ import Button from "@material-ui/core/Button";
 import MenuItem from "@material-ui/core/MenuItem";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import { fade } from "@material-ui/core/styles";
+import Alert from "@material-ui/lab/Alert";
 
 const styles = (theme) => ({
   root: {
     width: "100%",
     marginTop: "5vh",
+    padding: "0",
   },
   form: {
     backgroundColor: fade("#ffffff", 0.5),
@@ -37,6 +39,12 @@ const styles = (theme) => ({
     marginRight: "auto",
     marginLeft: "auto",
   },
+  customError: {
+    width: "68%",
+    marginRight: "auto",
+    marginLeft: "auto",
+    marginTop: "2vh",
+  },
 });
 
 const orderTypes = [
@@ -57,20 +65,21 @@ class order extends Component {
       symbol: "",
       shares: 1,
       buy: true,
+      errors: {},
     };
   }
 
   componentDidMount() {
-    console.log("In ComponentDidUpdate");
-    console.log(this.state.symbol == "");
-    console.log(this.props.data.currQuote);
-    console.log(this.state.symbol == "" && this.props.data.currQuote);
     if (this.state.symbol == "" && this.props.data.currQuote) {
-      console.log("in if statement");
-      console.log(this.props.data.currQuote.symbol);
       this.setState({
         symbol: this.props.data.currQuote.symbol,
       });
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.props.UI.errors && this.state.errors !== this.props.UI.errors) {
+      this.setState({ errors: this.props.UI.errors });
     }
   }
 
@@ -82,7 +91,6 @@ class order extends Component {
 
   handleSelect = (event) => {
     let value = event.target.value;
-    console.log(typeof value);
     if (value.localeCompare("Buy")) {
       this.setState({
         buy: true,
@@ -108,11 +116,11 @@ class order extends Component {
   };
 
   render() {
-    console.log("in render");
     const {
       classes,
       data: { currQuote },
     } = this.props;
+    const errors = this.state.errors;
     return (
       <>
         <Toolbar className={classes.root}>
@@ -164,6 +172,15 @@ class order extends Component {
             </Button>
           </form>
         </Toolbar>
+        {errors.msg && (
+          <Alert
+            variant='filled'
+            severity='error'
+            className={classes.customError}
+          >
+            {errors.msg}
+          </Alert>
+        )}
         <div className={classes.image}>
           <img src={logo} alt='logo' />
         </div>
@@ -174,6 +191,7 @@ class order extends Component {
 
 const mapStateToProps = (state) => ({
   data: state.data,
+  UI: state.UI,
 });
 
 const mapActionsToProps = {

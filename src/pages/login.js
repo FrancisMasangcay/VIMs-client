@@ -33,7 +33,6 @@ class login extends Component {
     };
   }
   componentDidUpdate() {
-    console.log("didUpdate props, ", this.props);
     if (this.props.UI.errors && this.state.errors !== this.props.UI.errors) {
       this.setState({ errors: this.props.UI.errors });
     }

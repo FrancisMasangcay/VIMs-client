@@ -19,10 +19,10 @@ TODO:
   6. ~~Integrate profile page to backend~~
   7. ~~Set up buy/sell page~~
      - ~~Add functionality/integrate w backend~~
-  8. Set up dictionary page
-  9. ~~Set up automatic account performance update function on firebase~
+  8. ~~Set up dictionary page~~
+  9. ~~Set up automatic account performance update function on firebase~~
   10. Set up order confirmation popup
-  11. change order function to only allow orders to be placed during market hours and days
+  11. ~~change order function to only allow orders to be placed during market hours and days~~
 
 ---
 
@@ -35,6 +35,6 @@ Tutorial:
 2. Set up opening example security for a stock tutorial
    - Should have a performance chart, and information tabs underneath
 3. Set up pop up windows to go over terms
-4. Add terms
+4. ~~Add terms~~
 5. Set up pop up windows for going over fees
 6. Set up pop up windows for going over beating the market/risk vs reward
