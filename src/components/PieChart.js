@@ -28,7 +28,6 @@ class PieChart extends Component {
       !this.props.user.credentials ||
       !this.props.user.credentials.allocation
     ) {
-      console.log("credentials or alloc PROP IS UNDFINED - in pieChart");
       return;
     }
     const alloc = this.props.user.credentials.allocation;

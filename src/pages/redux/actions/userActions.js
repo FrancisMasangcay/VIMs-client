@@ -37,7 +37,7 @@ export const signupUser = (newUserData, history) => (dispatch) => {
       localStorage.setItem("FBIdToken", FBIdToken);
       axios.defaults.headers.common["Authorization"] = FBIdToken;
       dispatch(getUserData());
-      history.push("/profile");
+      history.push("/learn");
     })
     .catch((err) => {
       let error;

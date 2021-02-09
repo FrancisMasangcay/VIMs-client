@@ -54,6 +54,11 @@ const p_columns = [
 ];
 
 class profile extends Component {
+  componentDidUpdate() {
+    if (!this.props.credentials.hasDoneTutorial) {
+      this.props.history.push("/learn");
+    }
+  }
   render() {
     const {
       classes,
@@ -61,6 +66,7 @@ class profile extends Component {
       positions,
       credentials: { cash },
     } = this.props;
+
     const transactionData = [];
     for (let i = 0; i < transactions.length; i++) {
       let data = {};
@@ -75,7 +81,7 @@ class profile extends Component {
     }
     return (
       <>
-        <LineChart />
+        <LineChart title='Account Performance ($USD)' />
         <div className={classes.grid}>
           <Grid container spacing={5}>
             <Grid item sm={12}>

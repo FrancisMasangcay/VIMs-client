@@ -43,7 +43,6 @@ class login extends Component {
       email: this.state.email,
       password: this.state.password,
     };
-    console.log("login history prop ", this.props.history);
     this.props.loginUser(userData, this.props.history);
   };
   handleChange = (event) => {

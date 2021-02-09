@@ -2,7 +2,7 @@ export const definitions = [
   {
     Numbers: [
       {
-        term: "52-Week-high and low",
+        term: "52 Week high and low",
         definition:
           "The highest and lowest closing price value for a security over a 52 week period, or in other words a year.",
       },
@@ -11,7 +11,7 @@ export const definitions = [
   {
     A: [
       {
-        term: "After-Hours-Trading",
+        term: "After Hours Trading",
         definition:
           "After-hours trading refers to any trades done after normal market hours have closed at 4pm and before 8pm.",
       },
@@ -127,9 +127,9 @@ export const definitions = [
   {
     P: [
       {
-        term: "P/E Ratio",
+        term: "Price to Earnings Ratio",
         definition:
-          "A security's P/E ratio compares its share price to the earnings the company generates. P/E ratios are calculated by dividing the share price by the total earnings of the company.",
+          "A security's Price to Earnings (P/E) ratio compares its share price to the earnings the company generates. P/E ratios are calculated by dividing the share price by the total earnings of the company.",
       },
       {
         term: "Price/Earnings-to-Growth (PEG) Ratio",

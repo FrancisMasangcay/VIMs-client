@@ -59,7 +59,6 @@ class NavbarHome extends Component {
   }
 
   componentDidUpdate() {
-    console.log("didUpdate props.data.symbol, ", this.props.data.symbol);
     if (
       this.props.data.symbol &&
       this.state.symbol !== this.props.data.symbol
@@ -76,7 +75,6 @@ class NavbarHome extends Component {
 
   handleSearch = (event) => {
     if (event) event.preventDefault();
-    console.log("hello search");
     const requestData = {
       symbol: this.state.symbol,
     };

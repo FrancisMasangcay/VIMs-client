@@ -11,6 +11,7 @@ class LineChart extends Component {
         labels: [],
         datasets: [],
       },
+      _title: props.title,
     };
   }
 
@@ -26,7 +27,6 @@ class LineChart extends Component {
 
   getData = () => {
     if (!this.props.user.performance) {
-      console.log("performacne PROP IS UNDFINED - in lineChart");
       return;
     }
     const userRef = this.props.user;
@@ -61,7 +61,7 @@ class LineChart extends Component {
           options={{
             title: {
               display: true,
-              text: "Account Performance ($USD)",
+              text: this.state._title,
               fontSize: 25,
               fontColor: "rgba(255, 255, 255, .85)",
             },

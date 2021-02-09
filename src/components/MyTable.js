@@ -44,15 +44,13 @@ class MyTable extends Component {
 
   handleChangeRowsPerPage = (event) => {
     this.setState({
-      rowsPerPage: +event.target.value + event.target.value,
+      rowsPerPage: +event.target.value,
       page: 0,
     });
   };
 
   render() {
-    console.log("MyTable props = ", this.props);
     const { classes, data, columns, title } = this.props;
-    console.log("MyTable data prop = ", data);
     return (
       <Paper className={classes.root}>
         <Toolbar className={classes.header}>

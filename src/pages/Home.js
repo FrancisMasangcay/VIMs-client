@@ -2,11 +2,10 @@ import React, { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-//MUI
-
 //assets
 import banner from "../assets/VIM-homepage-banner.png";
-import placeholder from "../assets/placeholder2.png";
+import profilePage from "../assets/profilePage.png";
+import learnPage from "../assets/learnPage.png";
 
 export default function Home() {
   useEffect(() => {
@@ -26,17 +25,13 @@ export default function Home() {
           </p>
         </div>
         <div className='container-media'>
-          <img src={placeholder} alt='simulation' />
+          <img src={profilePage} alt='simulation' />
         </div>
       </div>
 
       <div className='section' data-aos='fade-right'>
         <div className='container-media'>
-          <iframe
-            src='https://www.youtube.com/embed/NpEaa2P7qZI'
-            frameBorder='0'
-            title='Intro'
-          ></iframe>
+          <img src={learnPage} alt='learn page' />
         </div>
         <div className='container-txt'>
           <h1>Learn the Basics</h1>
@@ -46,7 +41,7 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className='section' data-aos='fade-left'>
+      {/* <div className='section' data-aos='fade-left'>
         <div className='container-txt'>
           <h1>Research</h1>
           <p>
@@ -56,9 +51,9 @@ export default function Home() {
           </p>
         </div>
         <div className='container-media'>
-          <img src={placeholder} alt='stock filters' />
+          <img src={profilePage} alt='stock filters' />
         </div>
-      </div>
+      </div> */}
 
       <div id='section-3'>
         <h1>READY TO GET STARTED? LET'S DIVE INTO INVESTING</h1>

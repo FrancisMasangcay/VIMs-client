@@ -70,7 +70,7 @@ class order extends Component {
   }
 
   componentDidMount() {
-    if (this.state.symbol == "" && this.props.data.currQuote) {
+    if (this.state.symbol === "" && this.props.data.currQuote) {
       this.setState({
         symbol: this.props.data.currQuote.symbol,
       });
