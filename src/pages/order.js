@@ -81,6 +81,7 @@ class order extends Component {
     if (this.props.UI.errors && this.state.errors !== this.props.UI.errors) {
       this.setState({ errors: this.props.UI.errors });
     }
+    console.log("buy = ", this.state.buy);
   }
 
   handleChange = (event) => {
@@ -91,7 +92,7 @@ class order extends Component {
 
   handleSelect = (event) => {
     let value = event.target.value;
-    if (value.localeCompare("Buy")) {
+    if (value === "Buy") {
       this.setState({
         buy: true,
       });

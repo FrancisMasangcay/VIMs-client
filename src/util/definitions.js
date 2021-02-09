@@ -48,9 +48,9 @@ export const definitions = [
   {
     D: [
       {
-        term: "Debt-To-Equity Ratio (D/E)",
+        term: "Debt To Equity Ratio",
         definition:
-          "A ratio used to determine a company's financial status should they need to pay all their debt immediatly. D/E ratios are calculated by dividing a company's liabilities with its liquid assets. A higher D/E ratio can signify higher risks to investors.",
+          "A ratio used to determine a company's financial status should they need to pay all their debt immediatly. Debt to Equity (D/E) ratios are calculated by dividing a company's liabilities with its liquid assets. A higher D/E ratio can signify higher risks to investors.",
       },
       {
         term: "Dividend",
@@ -132,9 +132,9 @@ export const definitions = [
           "A security's Price to Earnings (P/E) ratio compares its share price to the earnings the company generates. P/E ratios are calculated by dividing the share price by the total earnings of the company.",
       },
       {
-        term: "Price/Earnings-to-Growth (PEG) Ratio",
+        term: "Price Earnings-to-Growth Ratio",
         definition:
-          "The PEG ratio is a stocks P/E ratio divided by the growth rate of its price. By doing so the PEG ratio accounts for the expected growth of the stock and is often regarded as a more hollistic picture of a stock's value.",
+          "The Price Earning to Growth (PEG) ratio is a stocks P/E ratio divided by the growth rate of its price. By doing so the PEG ratio accounts for the expected growth of the stock and is often regarded as a more hollistic picture of a stock's value.",
       },
     ],
   },

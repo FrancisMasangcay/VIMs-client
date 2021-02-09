@@ -54,11 +54,6 @@ const p_columns = [
 ];
 
 class profile extends Component {
-  componentDidUpdate() {
-    if (!this.props.credentials.hasDoneTutorial) {
-      this.props.history.push("/learn");
-    }
-  }
   render() {
     const {
       classes,

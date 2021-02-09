@@ -16,7 +16,10 @@ class LineChart extends Component {
   }
 
   componentDidUpdate() {
-    if (this.state.chartData.labels.length === 0) {
+    if (
+      this.props.user === undefined ||
+      this.props.user.performance === undefined
+    ) {
       this.getData();
     }
   }

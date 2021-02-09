@@ -31,6 +31,10 @@ import Dictionary from "./pages/Dictionary";
 import OrderStatus from "./pages/OrderStatus";
 
 const theme = createMuiTheme(themeFile);
+
+axios.defaults.baseURL =
+  "https://us-central1-stock-market-app-ae566.cloudfunctions.net/api";
+
 const token = localStorage.FBIdToken;
 if (token) {
   //if a token exists
