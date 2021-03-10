@@ -12,14 +12,12 @@ class LineChart extends Component {
         datasets: [],
       },
       _title: props.title,
+      updated: false,
     };
   }
 
   componentDidUpdate() {
-    if (
-      this.props.user === undefined ||
-      this.props.user.performance === undefined
-    ) {
+    if (!this.state.updated) {
       this.getData();
     }
   }
@@ -41,6 +39,7 @@ class LineChart extends Component {
       pData.push(perf[i].endingValue);
     }
     this.setState({
+      updated: true,
       chartData: {
         labels: pLabels,
         datasets: [

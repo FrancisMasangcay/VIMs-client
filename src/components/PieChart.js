@@ -10,14 +10,12 @@ class PieChart extends Component {
         datasets: [],
         labels: [],
       },
+      updated: false,
     };
   }
 
   componentDidUpdate() {
-    if (
-      this.props.user === undefined ||
-      this.props.user.performance === undefined
-    ) {
+    if (!this.state.updated) {
       this.getData();
     }
   }
@@ -41,6 +39,7 @@ class PieChart extends Component {
     const theData = [alloc.liquid, alloc.stock, alloc.mutualFunds];
 
     this.setState({
+      updated: true,
       chartData: {
         labels: ["Cash %", "Stock %", "Mutual Fund %"],
         datasets: [

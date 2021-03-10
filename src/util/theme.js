@@ -29,9 +29,6 @@ export const themeFile = {
     textField: {
       margin: ".5rem auto .5rem auto",
       width: "66%",
-      "&$erroredLabel": {
-        color: "orange",
-      },
     },
     inputForm: {
       "&:-webkit-autofill": {
